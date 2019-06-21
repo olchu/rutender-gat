@@ -6,6 +6,8 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './style/main.scss'
 
+import logo from '../images/logo.png'
+
 const Header = ({ siteTitle }) => {
   AOS.init()
   return (
@@ -13,7 +15,7 @@ const Header = ({ siteTitle }) => {
       <nav className="navbar navbar-expand-md fixed-top navbar-default my-nav">
         <div className="container">
           <a className="navbar-brand">
-            <img className="logo" src="./img/logo.png" alt="" />
+            <img className="logo" src={logo} alt="" />
             <span className="d-none d-sm-inline-block">
               Тендерное сопровождение
             </span>

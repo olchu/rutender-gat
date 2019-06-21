@@ -53,6 +53,7 @@ section#why {
 .logo {
   width: 60px;
   height: auto;
+  margin-right: 5px;
 }
 .navbar-brand {
   color: $main-color;
@@ -199,7 +200,7 @@ section#why {
         rgba(1, 7, 211, 0.6) 80%
       )
       50% 50% / cover no-repeat,
-    URL("../img/finance-banner.jpg") 50% 50% / cover no-repeat;
+    URL('../img/finance-banner.jpg') 50% 50% / cover no-repeat;
 }
 .slide-sub-title {
   color: #fff;
@@ -250,7 +251,7 @@ section#service {
         rgba(1, 173, 211, 0.8) 100%
       )
       50% 50% / cover no-repeat,
-    URL("../img/bg-1.jpg") 50% 50% / cover no-repeat;
+    URL('../img/bg-1.jpg') 50% 50% / cover no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
