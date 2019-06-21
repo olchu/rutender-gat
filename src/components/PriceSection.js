@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 
 export const PriceSection = () => {
   return (
@@ -172,19 +174,19 @@ export const PriceSection = () => {
             data-aos-once="true"
           >
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Помощь в аккредитации на ЭТП / регистрация в ЕИС</div>
             </div>
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Отправка запроса на разъяснение документов</div>
             </div>
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Анализ документации на корректность</div>
             </div>
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Составление и отправка жалобы в ФАС</div>
             </div>
           </div>
@@ -196,19 +198,19 @@ export const PriceSection = () => {
             data-aos-once="true"
           >
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Составление заявки</div>
             </div>
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Подача заявки</div>
             </div>
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Проведение аукциона</div>
             </div>
             <div className="include-item">
-              <i className="far fa-check-circle price-icon"></i>
+              <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Контроль подписания контракта</div>
             </div>
           </div>

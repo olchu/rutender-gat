@@ -1,4 +1,15 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
+
+const whyWeTermins = [
+  'Профессиональный подход к исполнению обязательств',
+  'Опыт работ с момента выхода 44-ФЗ и 223-ФЗ',
+  'В одном из вариантов сопровождения не берем процент от выигранного контракта',
+  'Готовим Форму 2 по любым закупкам',
+  'Юридическая поддержка в сложных случаях',
+  'Обеспечиваем исполнительной документацией по строительным контрактам',
+]
 
 export const WhySection = () => {
   return (
@@ -14,7 +25,7 @@ export const WhySection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <i className="far fa-check-circle why-icon"></i>
+            <FontAwesomeIcon className="why-icon" icon={faCheckCircle} />
             <div>Профессиональный подход к исполнению обязательств</div>
           </div>
           <div
@@ -24,7 +35,7 @@ export const WhySection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <i className="far fa-check-circle why-icon"></i>
+            <FontAwesomeIcon className="why-icon" icon={faCheckCircle} />
             <div>Опыт работ с момента выхода 44-ФЗ и 223-ФЗ</div>
           </div>
           <div
@@ -34,7 +45,7 @@ export const WhySection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <i className="far fa-check-circle why-icon"></i>
+            <FontAwesomeIcon className="why-icon" icon={faCheckCircle} />
             <div>
               В одном из вариантов сопровождения не берем процент от выигранного
               контракта
@@ -48,7 +59,7 @@ export const WhySection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <i className="far fa-check-circle why-icon"></i>
+            <FontAwesomeIcon className="why-icon" icon={faCheckCircle} />
             <div>Готовим Форму 2 по любым закупкам</div>
           </div>
           <div
@@ -58,7 +69,7 @@ export const WhySection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <i className="far fa-check-circle why-icon"></i>
+            <FontAwesomeIcon className="why-icon" icon={faCheckCircle} />
             <div>Юридическая поддержка в сложных случаях</div>
           </div>
           <div
@@ -68,7 +79,7 @@ export const WhySection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <i className="far fa-check-circle why-icon"></i>
+            <FontAwesomeIcon className="why-icon" icon={faCheckCircle} />
             <div>
               Обеспечиваем исполнительной документацией по строительным
               контрактам

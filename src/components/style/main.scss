@@ -236,13 +236,8 @@ section#why {
   font-size: 30px;
   display: block;
   margin-right: 10px;
-  background: -moz-linear-gradient(right bottom, #e04542 10%, #9299f9 60%);
-  background: -webkit-linear-gradient(right bottom, #e04542 10%, #9299f9 60%);
-  background: linear-gradient(to right bottom, #e04542 10%, #9299f9 60%);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $main-color;
+  margin-bottom: 5px;
 }
 section#service {
   background: linear-gradient(
@@ -376,13 +371,11 @@ section#service {
   font-weight: 300;
   padding: 10px;
   color: rgba(0, 0, 0, 0.7);
-  > i {
-    font-size: 1.5rem;
-    color: $main-color;
-  }
 }
 .price-icon {
   margin-right: 10px;
+  font-size: 1.5rem;
+  color: $main-color;
 }
 footer {
   background: #1d546f;

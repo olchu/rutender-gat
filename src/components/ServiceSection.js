@@ -1,4 +1,14 @@
 import React from 'react'
+import info from '../images/info.png'
+import notebook from '../images/notebook.png'
+import usb from '../images/usb.png'
+import search from '../images/search.png'
+import reciept from '../images/reciept.png'
+import send from '../images/send.png'
+import torg from '../images/torg.png'
+import fas from '../images/fas.png'
+import hands from '../images/hands.png'
+import bag from '../images/bag.png'
 
 export const ServiceSection = () => {
   return (
@@ -32,7 +42,7 @@ export const ServiceSection = () => {
             data-aos-easing="ease-in-out"
           >
             <img
-              src="./img/info.png"
+              src={info}
               alt="Регистрация в ЕИС и ЕСИА Госуслуг"
               className="service-icon"
             />
@@ -48,7 +58,7 @@ export const ServiceSection = () => {
             data-aos-once="true"
           >
             <img
-              src="./img/notebook.png"
+              src={notebook}
               alt="Аккредитация на коммерческой ЭТП"
               className="service-icon"
             />
@@ -64,7 +74,7 @@ export const ServiceSection = () => {
             data-aos-once="true"
           >
             <img
-              src="./img/usb.png"
+              src={usb}
               alt="Регистрация сертификата на ЭТП"
               className="service-icon"
             />
@@ -97,11 +107,7 @@ export const ServiceSection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <img
-              src="./img/search.png"
-              alt="Поиск заказа"
-              className="service-icon"
-            />
+            <img src={search} alt="Поиск заказа" className="service-icon" />
             <p className="service-description">Поиск заказа</p>
           </div>
           <div
@@ -112,7 +118,7 @@ export const ServiceSection = () => {
             data-aos-once="true"
           >
             <img
-              src="./img/reciept.png"
+              src={reciept}
               alt="Составление заявки, запросы на разъяснение"
               className="service-icon"
             />
@@ -128,7 +134,7 @@ export const ServiceSection = () => {
             data-aos-once="true"
           >
             <img
-              src="./img/send.png"
+              src={send}
               alt="Размещение заявки на площадке"
               className="service-icon"
             />
@@ -141,11 +147,7 @@ export const ServiceSection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <img
-              src="./img/torg.png"
-              alt="Участие в тендере"
-              className="service-icon"
-            />
+            <img src={torg} alt="Участие в тендере" className="service-icon" />
             <p className="service-description">Участие в тендере</p>
           </div>
           <div
@@ -155,11 +157,7 @@ export const ServiceSection = () => {
             data-aos-easing="ease-in-out"
             data-aos-once="true"
           >
-            <img
-              src="./img/fas.png"
-              alt="Подача жалоб в ФАС"
-              className="service-icon"
-            />
+            <img src={fas} alt="Подача жалоб в ФАС" className="service-icon" />
             <p className="service-description">Подача жалоб в ФАС</p>
           </div>
           <div
@@ -170,7 +168,7 @@ export const ServiceSection = () => {
             data-aos-once="true"
           >
             <img
-              src="./img/hands.png"
+              src={hands}
               alt="Подписание контракта"
               className="service-icon"
             />
@@ -184,7 +182,7 @@ export const ServiceSection = () => {
             data-aos-once="true"
           >
             <img
-              src="./img/bag.png"
+              src={bag}
               alt="Сопровождение торгов в комплексе"
               className="service-icon"
             />
