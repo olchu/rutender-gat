@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import Header from "./header"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
+import Header from './header'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -10,6 +10,7 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            tel
           }
         }
       }
@@ -42,7 +43,7 @@ const Layout = ({ children }) => (
               </div>
               <div class="col-sm-12 col-md-6">
                 <div class="footer-contact">
-                  <div>Тел.: +7 (495) 123-12-12</div>
+                  <div>Тел.: {data.site.siteMetadata.tel}</div>
                   <div>e-mail.: your@mail.ru</div>
                 </div>
               </div>
@@ -51,7 +52,7 @@ const Layout = ({ children }) => (
           <section id="copyright">
             <div class="container">
               <div class="row justify-content-center copyright">
-                © {new Date().getFullYear()}, Copyright
+                © {new Date().getFullYear()} Copyright
               </div>
             </div>
           </section>
