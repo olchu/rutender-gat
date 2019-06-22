@@ -1,16 +1,19 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
+import content from '../data/whyData.json'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const SecondPage = () => {
+  console.log(content)
+  return (
+    <Layout>
+      <SEO title="Page two" />
+
+      <Link to="/">Go back to the homepage</Link>
+    </Layout>
+  )
+}
 
 export default SecondPage

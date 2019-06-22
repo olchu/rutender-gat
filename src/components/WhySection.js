@@ -1,15 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
-
-const whyWeTermins = [
-  'Профессиональный подход к исполнению обязательств',
-  'Опыт работ с момента выхода 44-ФЗ и 223-ФЗ',
-  'В одном из вариантов сопровождения не берем процент от выигранного контракта',
-  'Готовим Форму 2 по любым закупкам',
-  'Юридическая поддержка в сложных случаях',
-  'Обеспечиваем исполнительной документацией по строительным контрактам',
-]
+import content from '../data/whyData.json'
 
 export const WhySection = () => {
   return (
