@@ -6,10 +6,10 @@ import { WhySection } from '../components/WhySection'
 import { ServiceSection } from '../components/ServiceSection'
 import { PriceSection } from '../components/PriceSection'
 import { ModalSend } from '../components/ModalSend'
-import Button from 'react-bootstrap/Button'
 
 const IndexPage = () => {
   const [isShowModal, setShowModal] = React.useState(false)
+  const [choice, setChoice] = React.useState('')
 
   return (
     <Layout setShowModal={() => setShowModal(true)}>
@@ -17,8 +17,12 @@ const IndexPage = () => {
       <CarouselSection setShowModal={() => setShowModal(true)} />
       <WhySection />
       <ServiceSection />
-      <PriceSection setShowModal={() => setShowModal(true)} />
-      <ModalSend show={isShowModal} handleClose={() => setShowModal(false)} />
+      <PriceSection setChoice={setChoice} setShowModal={setShowModal} />
+      <ModalSend
+        choice={choice}
+        show={isShowModal}
+        handleClose={() => setShowModal(false)}
+      />
     </Layout>
   )
 }

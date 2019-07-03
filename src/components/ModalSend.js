@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 export const ModalSend = props => {
+  const { choice } = props
   return (
     <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Header closeButton>
@@ -43,9 +44,9 @@ export const ModalSend = props => {
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={props.handleClose}>
+        <button className="btn btn-order" onClick={props.handleClose}>
           Заказать
-        </Button>
+        </button>
       </Modal.Footer>
     </Modal>
   )

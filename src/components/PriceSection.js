@@ -3,6 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 
 export const PriceSection = props => {
+  const pressMy = choice => {
+    props.setChoice(choice)
+    props.setShowModal(true)
+  }
   return (
     <section id="price">
       <div className="container">
@@ -43,7 +47,10 @@ export const PriceSection = props => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">4000 ₽</div>
-                <button className="btn btn-order" onClick={props.setShowModal}>
+                <button
+                  className="btn btn-order"
+                  onClick={() => pressMy('Старт')}
+                >
                   Заказать
                 </button>
               </div>
@@ -57,7 +64,10 @@ export const PriceSection = props => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">12 000 ₽</div>
-                <button className="btn btn-order" onClick={props.setShowModal}>
+                <button
+                  className="btn btn-order"
+                  onClick={() => pressMy('Простой')}
+                >
                   Заказать
                 </button>
               </div>
@@ -71,7 +81,10 @@ export const PriceSection = props => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">36 000 ₽</div>
-                <button className="btn btn-order" onClick={props.setShowModal}>
+                <button
+                  className="btn btn-order"
+                  onClick={() => pressMy('Деловой')}
+                >
                   Заказать
                 </button>
               </div>
@@ -84,7 +97,10 @@ export const PriceSection = props => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">80 000 ₽</div>
-                <button className="btn btn-order" onClick={props.setShowModal}>
+                <button
+                  className="btn btn-order"
+                  onClick={() => pressMy('Строительный')}
+                >
                   Заказать
                 </button>
               </div>
@@ -96,7 +112,10 @@ export const PriceSection = props => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">140 000 ₽</div>
-                <button className="btn btn-order" onClick={props.setShowModal}>
+                <button
+                  className="btn btn-order"
+                  onClick={() => pressMy('Строительный профи')}
+                >
                   Заказать
                 </button>
               </div>
@@ -110,7 +129,10 @@ export const PriceSection = props => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">10 000 ₽ + %</div>
-                <button className="btn btn-order" onClick={props.setShowModal}>
+                <button
+                  className="btn btn-order"
+                  onClick={() => pressMy('Эксклюзив')}
+                >
                   Заказать
                 </button>
               </div>
