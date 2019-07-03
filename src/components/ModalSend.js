@@ -1,9 +1,8 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 
 export const ModalSend = props => {
-  const { choice } = props
+  //const { choice } = props
   return (
     <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Header closeButton>

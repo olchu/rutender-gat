@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
-import content from '../data/whyData.json'
+//import content from '../data/whyData.json'
 
 export const WhySection = () => {
   return (
