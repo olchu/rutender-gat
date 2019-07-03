@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import '../../node_modules/bootstrap-scss'
 import AOS from 'aos'
@@ -13,12 +14,12 @@ const Header = ({ siteTitle, setShowModal }) => {
     <header>
       <nav className="navbar navbar-expand-md fixed-top navbar-default my-nav">
         <div className="container">
-          <a className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img className="logo" src={logo} alt="" />
             <span className="d-none d-sm-inline-block">
               Тендерное сопровождение
             </span>
-          </a>
+          </Link>
           <button
             className="navbar-toggler second-button"
             type="button"
@@ -38,19 +39,19 @@ const Header = ({ siteTitle, setShowModal }) => {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <Link to="/" className="nav-link">
                   Цены
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link to="/" className="nav-link">
                   Форма 2
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="calc.html" className="nav-link" href="#">
+                <Link to="calculator" className="nav-link">
                   Калькулятор услуг
-                </a>
+                </Link>
               </li>
             </ul>
 

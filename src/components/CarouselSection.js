@@ -46,7 +46,7 @@ export const CarouselSection = props => {
                 <div className="col">
                   <p className="slide-description-options">от 1800 Р</p>
                   <span>за услугу</span>
-                  <a href="#" className="all-price">
+                  <a href="ya.ru" className="all-price">
                     Все цены <i className="fas fa-chevron-right"></i>
                   </a>
                 </div>

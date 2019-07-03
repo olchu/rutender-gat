@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
@@ -28,19 +29,19 @@ const Layout = ({ setShowModal, children }) => (
               <div className="col-sm-12 col-md-6">
                 <ul className="nav ">
                   <li className="nav-item active">
-                    <a className="nav-link" href="#">
+                    <Link to="/" className="nav-link">
                       Цены <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <Link to="/" className="nav-link">
                       Форма 2
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="./calc.html">
+                    <Link to="calculator" className="nav-link">
                       Калькулятор услуг
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
