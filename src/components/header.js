@@ -7,7 +7,7 @@ import './style/main.scss'
 
 import logo from '../images/logo.png'
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, setShowModal }) => {
   AOS.init()
   return (
     <header>
@@ -55,10 +55,8 @@ const Header = ({ siteTitle }) => {
             </ul>
 
             <button
-              type="button"
+              onClick={setShowModal}
               className="btn btn-outline my-2 my-sm-0 send-form-outline"
-              data-toggle="modal"
-              data-target="#exampleModal"
             >
               Заказать
             </button>

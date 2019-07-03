@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 
-export const PriceSection = () => {
+export const PriceSection = props => {
   return (
     <section id="price">
       <div className="container">
@@ -43,14 +43,9 @@ export const PriceSection = () => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">4000 ₽</div>
-                <a
-                  href="#"
-                  className="btn btn-order"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                >
+                <button className="btn btn-order" onClick={props.setShowModal}>
                   Заказать
-                </a>
+                </button>
               </div>
             </div>
             <div className="card">
@@ -62,14 +57,9 @@ export const PriceSection = () => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">12 000 ₽</div>
-                <a
-                  href="#"
-                  className="btn btn-order"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                >
+                <button className="btn btn-order" onClick={props.setShowModal}>
                   Заказать
-                </a>
+                </button>
               </div>
             </div>
             <div className="card">
@@ -81,14 +71,9 @@ export const PriceSection = () => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">36 000 ₽</div>
-                <a
-                  href="#"
-                  className="btn btn-order"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                >
+                <button className="btn btn-order" onClick={props.setShowModal}>
                   Заказать
-                </a>
+                </button>
               </div>
             </div>
 
@@ -99,14 +84,9 @@ export const PriceSection = () => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">80 000 ₽</div>
-                <a
-                  href="#"
-                  className="btn btn-order"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                >
+                <button className="btn btn-order" onClick={props.setShowModal}>
                   Заказать
-                </a>
+                </button>
               </div>
             </div>
             <div className="card">
@@ -116,14 +96,9 @@ export const PriceSection = () => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">140 000 ₽</div>
-                <a
-                  href="#"
-                  className="btn btn-order"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                >
+                <button className="btn btn-order" onClick={props.setShowModal}>
                   Заказать
-                </a>
+                </button>
               </div>
             </div>
             <div className="card">
@@ -135,14 +110,9 @@ export const PriceSection = () => {
               </div>
               <div className="  card-price text-center">
                 <div className="price-value">10 000 ₽ + %</div>
-                <a
-                  href="#"
-                  className="btn btn-order"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                >
+                <button className="btn btn-order" onClick={props.setShowModal}>
                   Заказать
-                </a>
+                </button>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-export const CarouselSection = () => {
+export const CarouselSection = props => {
   return (
     <section id="my-carousel">
       <div
@@ -35,10 +35,8 @@ export const CarouselSection = () => {
               <div class="row">
                 <div class="col">
                   <button
-                    type="button"
                     class="btn  my-2 my-sm-0 send-form"
-                    data-toggle="modal"
-                    data-target="#exampleModal"
+                    onClick={props.setShowModal}
                   >
                     Отправить заявку
                   </button>

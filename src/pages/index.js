@@ -12,15 +12,12 @@ const IndexPage = () => {
   const [isShowModal, setShowModal] = React.useState(false)
 
   return (
-    <Layout>
+    <Layout setShowModal={() => setShowModal(true)}>
       <SEO title="Home" />
-      <CarouselSection />
+      <CarouselSection setShowModal={() => setShowModal(true)} />
       <WhySection />
-      <Button variant="primary" onClick={() => setShowModal(true)}>
-        Заказать
-      </Button>
       <ServiceSection />
-      <PriceSection />
+      <PriceSection setShowModal={() => setShowModal(true)} />
       <ModalSend show={isShowModal} handleClose={() => setShowModal(false)} />
     </Layout>
   )
