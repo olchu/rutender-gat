@@ -1,8 +1,24 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
+import axios from 'axios'
 
 export const ModalSend = props => {
-  //const { choice } = props
+  const { choice } = props
+  const sendMail = () => {
+    const checkedItems = JSON.stringify(choice)
+    console.log(checkedItems)
+    axios
+      .post('/action_ajax_form.php', checkedItems)
+      .then(function(response) {
+        console.log('secsess')
+        console.log(response)
+      })
+      .catch(function(error) {
+        console.log('error')
+        console.log(error)
+      })
+  }
+
   return (
     <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Header closeButton>
@@ -43,7 +59,7 @@ export const ModalSend = props => {
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <button className="btn btn-order" onClick={props.handleClose}>
+        <button className="btn btn-order" onClick={sendMail}>
           Заказать
         </button>
       </Modal.Footer>
