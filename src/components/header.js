@@ -2,14 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import '../../node_modules/bootstrap-scss'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import './style/main.scss'
-
+import '../style/main.scss'
 import logo from '../images/logo.png'
 
 const Header = ({ siteTitle, setShowModal }) => {
-  AOS.init()
   return (
     <header>
       <nav className="navbar navbar-expand-md fixed-top navbar-default my-nav">

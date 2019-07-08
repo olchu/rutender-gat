@@ -1,14 +1,14 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout404 from '../components/layout404'
+import SEO from '../components/seo'
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout404>
     <SEO title="404: Not found" />
     <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+    <p>sorry</p>
+  </Layout404>
 )
 
 export default NotFoundPage

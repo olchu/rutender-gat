@@ -194,13 +194,23 @@ section#why {
   }
 }
 .slide-1 {
+  // background: linear-gradient(
+  //       145deg,
+  //       rgb(226, 100, 100) 20%,
+  //       rgba(1, 7, 211, 0.6) 80%
+  //     )
+  //     50% 50% / cover no-repeat,
+  //   URL('../images/finance-banner.jpg') 50% 50% / cover no-repeat;
+
   background: linear-gradient(
-        145deg,
-        rgb(226, 100, 100) 20%,
-        rgba(1, 7, 211, 0.6) 80%
-      )
-      50% 50% / cover no-repeat,
-    URL('../../images/finance-banner.jpg') 50% 50% / cover no-repeat;
+      145deg,
+      rgb(226, 100, 100) 20%,
+      rgba(1, 7, 211, 0.6) 80%
+    ),
+    url(../images/finance-banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .slide-sub-title {
   color: #fff;

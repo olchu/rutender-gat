@@ -3,9 +3,10 @@ import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 
 export const ModalSend = props => {
-  const { choice } = props
+  console.log('modal =', props.choice)
   const sendMail = () => {
-    const checkedItems = JSON.stringify(choice)
+    console.log('modal in', props.choice)
+    const checkedItems = JSON.stringify(props.choice)
     console.log(checkedItems)
     axios
       .post('/action_ajax_form.php', checkedItems)
