@@ -1,11 +1,11 @@
 <?php
-
-    $dataForm = json_decode($_POST["dataForm"],true);
-    $checkedItems=json_decode($_POST['checkedItems']);
+    $dataForm = json_decode(file_get_contents("php://input"), true);
 
     $name=$dataForm['name'];
     $phonenumber=$dataForm['phone'];
     $email=$dataForm['email'];
+    $checkedItems =$dataForm['checkedItems'];
+
     $to = "ochurkin@gmail.com"; 
     $from = "site@rostn.ru"; 
   
@@ -13,17 +13,18 @@
         $service.="<li>";
         $service.=$value;
         $service.="</li>";
-   }
+    }
+
     $mail_to_myemail = "
     <h1> Здравствуйте! </h1>
     <h3>Было отправлено сообщение с сайта! </h3>
     <p>Имя отправителя: $name </p>
     <p>Номер телефона: $phonenumber</p>
     <p>email: $email</p>
-    <p>Выбранные услуги :
+    <p>Выбранные услуги :</p>
     <ul> $service </ul>
-    </p>
     ";
+    
     $headers = "From: $from \r\n";
     $subject = "Cообщение с сайта rostn.ru";
    
