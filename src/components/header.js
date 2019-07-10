@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import '../../node_modules/bootstrap-scss'
 import '../style/main.scss'
 import logo from '../images/logo.png'
+import 'animate.css/animate.min.css'
 
 const Header = ({ siteTitle, setShowModal }) => {
   return (
