@@ -224,6 +224,7 @@ section#why {
 .slide-description-options {
   font-size: 1.4rem;
   margin: 10px 0;
+  margin-right: 10px;
   display: inline-block;
   span {
     font-size: 0.8rem;
@@ -251,16 +252,16 @@ section#why {
 }
 section#service {
   background: linear-gradient(
-        90deg,
-        rgba(2, 74, 99, 0.8) 40%,
-        rgba(1, 173, 211, 0.8) 100%
-      )
-      50% 50% / cover no-repeat,
-    URL('../img/bg-1.jpg') 50% 50% / cover no-repeat;
+      90deg,
+      rgba(2, 74, 99, 0.8) 40%,
+      rgba(1, 173, 211, 0.8) 100%
+    ),
+    url(../images/bg-1.jpg);
   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
   color: #fff;
 }
 .service-row {
@@ -356,9 +357,6 @@ section#service {
         rgba(226, 100, 100, 0.5) 30%,
         rgba(1, 173, 211, 0.3) 80%
       );
-      .price-value {
-        //color: $main-color;
-      }
     }
   }
 }

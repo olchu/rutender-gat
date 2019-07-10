@@ -3,9 +3,19 @@ import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 
 export const ModalSend = props => {
-  const name = 'oleg'
-  const phone = '896372709070'
-  const email = 'ochjj'
+  const [name, setName] = React.useState('')
+  const [phone, setPhone] = React.useState('')
+  const [email, setEmail] = React.useState('')
+
+  const updateState = (e, setState) => {
+    setState(e.target.value)
+  }
+
+  const resetForm = () => {
+    setName('')
+    setPhone('')
+    setEmail('')
+  }
 
   const checkedItems = props.choice
   const sendMail = () => {
@@ -17,11 +27,12 @@ export const ModalSend = props => {
         checkedItems: checkedItems,
       })
       .then(function(response) {
-        console.log(response)
+        // console.log(response)
         props.handleClose()
+        resetForm()
       })
       .catch(function(error) {
-        console.log(error)
+        // console.log(error)
       })
   }
 
@@ -37,6 +48,8 @@ export const ModalSend = props => {
             <input
               type="text"
               className="form-control"
+              value={name}
+              onChange={e => updateState(e, setName)}
               placeholder="Введите имя"
             />
           </div>
@@ -46,6 +59,8 @@ export const ModalSend = props => {
               type="tel"
               className="form-control"
               placeholder="Введите телефон"
+              value={phone}
+              onChange={e => updateState(e, setPhone)}
             />
           </div>
           <div className="form-group">
@@ -54,6 +69,8 @@ export const ModalSend = props => {
               type="email"
               className="form-control"
               placeholder="Введите email"
+              value={email}
+              onChange={e => updateState(e, setEmail)}
             />
           </div>
         </form>

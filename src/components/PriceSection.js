@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 export const PriceSection = props => {
   const pressMy = choice => {
@@ -10,21 +11,21 @@ export const PriceSection = props => {
   return (
     <section id="price">
       <div className="container">
-        <div
+        <ScrollAnimation
           className="row justify-content-center text-center"
-          data-aos="fade-in"
-          data-aos-delay="50"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true"
+          animateIn="fadeIn"
+          delay={50}
+          duration={0.4}
+          animateOnce
         >
           <h2 className="price-hedding">Тарифы комплексного сопровождения</h2>
-        </div>
-        <div
+        </ScrollAnimation>
+        <ScrollAnimation
           className="row justify-content-center"
-          data-aos="fade-out"
-          data-aos-delay="50"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true"
+          animateIn="fadeIn"
+          delay={50}
+          duration={0.4}
+          animateOnce
         >
           <div className="card-columns justify-content-center">
             <div className="card">
@@ -138,7 +139,7 @@ export const PriceSection = props => {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
         <div className="row justify-content-center ">
           <div className="col">
             <blockquote className="blockquote">
@@ -149,21 +150,22 @@ export const PriceSection = props => {
             </blockquote>
           </div>
         </div>
-        <div
+        <ScrollAnimation
           className="row justify-content-center text-center"
-          data-aos="fade-in"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true"
+          animateIn="fadeIn"
+          delay={50}
+          duration={0.4}
+          animateOnce
         >
           <h4 className="what-include">Что входит в сопровождение</h4>
-        </div>
+        </ScrollAnimation>
         <div className="row justify-content-center">
-          <div
+          <ScrollAnimation
             className="col-sm-12 col-md-6"
-            data-aos="fade-out"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeIn"
+            delay={50}
+            duration={0.4}
+            animateOnce
           >
             <div className="include-item">
               <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
@@ -181,13 +183,13 @@ export const PriceSection = props => {
               <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Составление и отправка жалобы в ФАС</div>
             </div>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-6"
-            data-aos="fade-out"
-            data-aos-delay="100"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeIn"
+            delay={50}
+            duration={0.4}
+            animateOnce
           >
             <div className="include-item">
               <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
@@ -205,7 +207,7 @@ export const PriceSection = props => {
               <FontAwesomeIcon className="price-icon" icon={faCheckCircle} />
               <div>Контроль подписания контракта</div>
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

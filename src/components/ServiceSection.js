@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollAnimation from 'react-animate-on-scroll'
 import info from '../images/info.png'
 import notebook from '../images/notebook.png'
 import usb from '../images/usb.png'
@@ -17,29 +18,29 @@ export const ServiceSection = () => {
         <div className="row justify-content-center">
           <h2>Услуги</h2>
         </div>
-        <div
+        <ScrollAnimation
           className="row"
-          data-aos="fade-right"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true"
+          animateIn="fadeInLeft"
+          duration={0.5}
+          animateOnce
         >
           <div className="col">
             <div className="title">Аккредитация на ЭТП</div>
           </div>
-        </div>
-        <div
+        </ScrollAnimation>
+        <ScrollAnimation
           className="row service-row justify-content-center"
-          data-aos="fade-in"
-          data-aos-delay="100"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true"
+          animateIn="fadeIn"
+          delay={50}
+          duration={0.4}
+          animateOnce
         >
-          <div
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-once="true"
-            data-aos-easing="ease-in-out"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img
               src={info}
@@ -49,13 +50,13 @@ export const ServiceSection = () => {
             <p className="service-description">
               Регистрация в ЕИС и ЕСИА Госуслуг
             </p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img
               src={notebook}
@@ -65,13 +66,13 @@ export const ServiceSection = () => {
             <p className="service-description">
               Аккредитация на коммерческой ЭТП
             </p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img
               src={usb}
@@ -81,41 +82,41 @@ export const ServiceSection = () => {
             <p className="service-description">
               Регистрация сертификата на ЭТП
             </p>
-          </div>
-        </div>
-        <div
+          </ScrollAnimation>
+        </ScrollAnimation>
+        <ScrollAnimation
           className="row"
-          data-aos="fade-right"
-          data-aos-easing="fade-in-out"
-          data-aos-once="true"
+          animateIn="fadeInLeft"
+          duration={0.5}
+          animateOnce
         >
           <div className="col">
             <div className="title">Сопровождение торгов</div>
           </div>
-        </div>
-        <div
+        </ScrollAnimation>
+        <ScrollAnimation
           className="row justify-content-center service-row"
-          data-aos="fade-in"
-          data-aos-delay="50"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true"
+          animateIn="fadeIn"
+          delay={50}
+          duration={0.4}
+          animateOnce
         >
-          <div
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img src={search} alt="Поиск заказа" className="service-icon" />
             <p className="service-description">Поиск заказа</p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img
               src={reciept}
@@ -125,13 +126,13 @@ export const ServiceSection = () => {
             <p className="service-description">
               Составление заявки, запросы на разъяснение
             </p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img
               src={send}
@@ -139,33 +140,33 @@ export const ServiceSection = () => {
               className="service-icon"
             />
             <p className="service-description">Размещение заявки на площадке</p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img src={torg} alt="Участие в тендере" className="service-icon" />
             <p className="service-description">Участие в тендере</p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img src={fas} alt="Подача жалоб в ФАС" className="service-icon" />
             <p className="service-description">Подача жалоб в ФАС</p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="slide-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img
               src={hands}
@@ -173,13 +174,13 @@ export const ServiceSection = () => {
               className="service-icon"
             />
             <p className="service-description">Подписание контракта</p>
-          </div>
-          <div
+          </ScrollAnimation>
+          <ScrollAnimation
             className="col-sm-12 col-md-4 text-center"
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-easing="ease-in-out"
-            data-aos-once="true"
+            animateIn="fadeInUp"
+            delay={70}
+            duration={0.3}
+            animateOnce
           >
             <img
               src={bag}
@@ -189,8 +190,8 @@ export const ServiceSection = () => {
             <p className="service-description">
               Сопровождение торгов в комплексе
             </p>
-          </div>
-        </div>
+          </ScrollAnimation>
+        </ScrollAnimation>
       </div>
     </section>
   )
