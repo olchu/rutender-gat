@@ -9,7 +9,7 @@ import { ModalSend } from '../components/ModalSend'
 
 const IndexPage = () => {
   const [isShowModal, setShowModal] = React.useState(false)
-  const [choice, setChoice] = React.useState(['првиет'])
+  const [choice, setChoice] = React.useState(['не выбрали конкретную услугу'])
   return (
     <Layout setShowModal={() => setShowModal(true)}>
       <SEO title="Home" />

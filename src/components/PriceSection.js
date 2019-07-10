@@ -49,7 +49,7 @@ export const PriceSection = props => {
                 <div className="price-value">4000 ₽</div>
                 <button
                   className="btn btn-order"
-                  onClick={() => pressMy('Старт')}
+                  onClick={() => pressMy(['Тариф - Старт'])}
                 >
                   Заказать
                 </button>
@@ -66,7 +66,7 @@ export const PriceSection = props => {
                 <div className="price-value">12 000 ₽</div>
                 <button
                   className="btn btn-order"
-                  onClick={() => pressMy('Простой')}
+                  onClick={() => pressMy(['Тариф - Простой'])}
                 >
                   Заказать
                 </button>
@@ -83,7 +83,7 @@ export const PriceSection = props => {
                 <div className="price-value">36 000 ₽</div>
                 <button
                   className="btn btn-order"
-                  onClick={() => pressMy('Деловой')}
+                  onClick={() => pressMy(['Тариф - Деловой'])}
                 >
                   Заказать
                 </button>
@@ -99,7 +99,7 @@ export const PriceSection = props => {
                 <div className="price-value">80 000 ₽</div>
                 <button
                   className="btn btn-order"
-                  onClick={() => pressMy('Строительный')}
+                  onClick={() => pressMy(['Тариф - Строительный'])}
                 >
                   Заказать
                 </button>
@@ -114,7 +114,7 @@ export const PriceSection = props => {
                 <div className="price-value">140 000 ₽</div>
                 <button
                   className="btn btn-order"
-                  onClick={() => pressMy('Строительный профи')}
+                  onClick={() => pressMy(['Тариф - Строительный профи'])}
                 >
                   Заказать
                 </button>
@@ -131,7 +131,7 @@ export const PriceSection = props => {
                 <div className="price-value">10 000 ₽ + %</div>
                 <button
                   className="btn btn-order"
-                  onClick={() => pressMy('Эксклюзив')}
+                  onClick={() => pressMy(['Тариф - Эксклюзив'])}
                 >
                   Заказать
                 </button>

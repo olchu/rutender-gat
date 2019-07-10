@@ -10,7 +10,7 @@ export const ModalSend = props => {
   const checkedItems = props.choice
   const sendMail = () => {
     axios
-      .post('http://kontaklt.beget.tech/action_ajax_form.php', {
+      .post('./action_ajax_form.php', {
         name: name,
         phone: phone,
         email: email,
