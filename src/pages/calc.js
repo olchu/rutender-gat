@@ -7,7 +7,9 @@ import { CalcPrice } from '../components/CalcPrice'
 
 export default props => {
   const [isShowModal, setShowModal] = React.useState(false)
-  const [choice, setChoice] = React.useState(['не выбрали конкретную услугу'])
+  const [choice, setChoice] = React.useState([
+    'клиент не выбрал конкретную услугу',
+  ])
   return (
     <Layout location={props.location} setShowModal={() => setShowModal(true)}>
       <SEO title="Калькулятор услуг" />

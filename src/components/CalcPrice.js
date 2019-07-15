@@ -3,23 +3,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faCircle } from '@fortawesome/free-regular-svg-icons'
 import { ModalMessage } from './ModalMessage'
 import { MyForm } from './MyForm'
+import axios from 'axios'
 import '../style/calc.scss'
 
 import order from '../data/order.json'
 
+const sendMail = (dataForm, checkedItems) => {
+  axios
+    .post('../action_ajax_form.php', {
+      name: dataForm.name,
+      phone: dataForm.phone,
+      email: dataForm.email,
+      checkedItems: checkedItems,
+    })
+    .then(function(response) {})
+    .catch(function(error) {})
+}
+
 export const CalcPrice = () => {
   const [showModal, setShowModal] = React.useState(false)
-
   const [ischecked, setChecked] = React.useState(
     order.reduce((obj, next) => {
       obj[next.title] = false
       return obj
     }, {})
   )
-
   const [sum, setSum] = React.useState(Number(0))
+  const [dataForm, setDataForm] = React.useState({})
 
-  const onChange = e => {
+  const onInputChange = e => {
     setChecked({
       ...ischecked,
       [e.target.name]: e.target.checked,
@@ -34,20 +46,27 @@ export const CalcPrice = () => {
   const clickOrder = () => {
     if (sum === 0) {
       setShowModal(true)
+      return null
     }
+    const checkedItems = order.reduce((obj, next) => {
+      if (ischecked[next.title]) {
+        obj.push(next.title)
+      }
+      return obj
+    }, [])
+    sendMail(dataForm, checkedItems)
   }
-  const dataForm = {}
-  console.log('calc dataForm', dataForm)
+
   return (
     <section id="calc">
       <div className="container">
-        <form name="separate" className="separate">
+        <div name="separate" className="separate">
           <div className="row justify-content-center text-center">
             <h2 className="price-hedding">Расчет услуг отдельно</h2>
           </div>
           <div className="row">
             <div className="col-md-6 send-col-form">
-              <MyForm dataForm={dataForm} />
+              <MyForm getDataForm={dataForm => setDataForm(dataForm)} />
             </div>
             <div className="col-md-6">
               {order.map(({ title, price, value }, key) => {
@@ -55,7 +74,7 @@ export const CalcPrice = () => {
                   <label key={key}>
                     <input
                       type="checkbox"
-                      onChange={onChange}
+                      onChange={onInputChange}
                       name={title}
                       data-label={title}
                       value={value}
@@ -79,7 +98,7 @@ export const CalcPrice = () => {
               })}
             </div>
           </div>
-        </form>
+        </div>
 
         <div className="row">
           <div className="sum">

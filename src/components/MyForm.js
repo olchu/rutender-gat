@@ -6,13 +6,15 @@ export const MyForm = props => {
     phone: '',
     email: '',
   })
-
   const updateState = e => {
     setDataForm({
       ...dataForm,
       [e.target.name]: e.target.value,
     })
   }
+  React.useEffect(() => {
+    props.getDataForm(dataForm)
+  }, [dataForm])
 
   return (
     <form>
