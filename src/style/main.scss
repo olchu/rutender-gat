@@ -149,6 +149,9 @@ section#why {
   .nav-link {
     color: $main-color;
   }
+  .nav-link.active {
+    color: black;
+  }
 }
 .carousel-inner {
   height: 100%;

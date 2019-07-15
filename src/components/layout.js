@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 
-const Layout = ({ setShowModal, children }) => (
+const Layout = ({ setShowModal, children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -21,6 +21,7 @@ const Layout = ({ setShowModal, children }) => (
         <Header
           setShowModal={setShowModal}
           siteTitle={data.site.siteMetadata.title}
+          path={location.pathname}
         />
         <main>{children}</main>
         <footer>
