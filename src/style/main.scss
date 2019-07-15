@@ -387,6 +387,10 @@ section#service {
   margin-right: 10px;
   font-size: 1.5rem;
   color: $main-color;
+  &-unchecked {
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
 }
 footer {
   background: #1d546f;

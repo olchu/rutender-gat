@@ -1,54 +1,43 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faCircle } from '@fortawesome/free-regular-svg-icons'
+import { ModalMessage } from './ModalMessage'
+import { MyForm } from './MyForm'
 import '../style/calc.scss'
 
-const order = [
-  {
-    title: 'Регистрация в ЕИС и ЕСИА Госуслуг',
-    price: '5 000 ₽',
-    value: 5000,
-    checked: false,
-    id: 0,
-  },
-  {
-    title: 'Аккредитация на коммерческой ЭТП',
-    price: '3 000 ₽',
-    value: 3000,
-    checked: true,
-    id: 1,
-  },
-]
+import order from '../data/order.json'
+
 export const CalcPrice = () => {
-  // const [sum, setSum] = React.useState(0)
+  const [showModal, setShowModal] = React.useState(false)
 
-  // const summPlus = num => {
-  //   setSum(sum + num)
-  // }
-  // const summMinus = num => {
-  //   setSum(sum - num)
-  // }
+  const [ischecked, setChecked] = React.useState(
+    order.reduce((obj, next) => {
+      obj[next.title] = false
+      return obj
+    }, {})
+  )
 
-  const [ischecked, setChecked] = React.useState(() => {
-    let obj = []
-    obj = order.map(item => {
-      return item.checked
+  const [sum, setSum] = React.useState(Number(0))
+
+  const onChange = e => {
+    setChecked({
+      ...ischecked,
+      [e.target.name]: e.target.checked,
     })
-    return obj
-  })
+    if (e.target.checked) {
+      setSum(Number(sum) + Number(e.target.value))
+    } else {
+      setSum(Number(sum) - Number(e.target.value))
+    }
+  }
 
-  console.log('state', ischecked)
-
-  /*  const inputChange = key => {
-    setChecked(() => {
-    let obj=[]
-    obj = ischecked.map(item =>{
-      if item
-      return
-    })
-    })
-  } */
-
+  const clickOrder = () => {
+    if (sum === 0) {
+      setShowModal(true)
+    }
+  }
+  const dataForm = {}
+  console.log('calc dataForm', dataForm)
   return (
     <section id="calc">
       <div className="container">
@@ -58,67 +47,32 @@ export const CalcPrice = () => {
           </div>
           <div className="row">
             <div className="col-md-6 send-col-form">
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Имя:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Введите имя"
-                  name="name"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Телефон:</label>
-                <input
-                  type="tel"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Введите телефон"
-                  name="phone"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Email:</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Введите email"
-                  name="email"
-                />
-              </div>
+              <MyForm dataForm={dataForm} />
             </div>
             <div className="col-md-6">
-              {order.map(item => {
+              {order.map(({ title, price, value }, key) => {
                 return (
-                  <label key={item}>
+                  <label key={key}>
                     <input
                       type="checkbox"
-                      onChange={e => {
-                        setChecked(ischecked => {
-                          let obj = []
-                          obj = ischecked.map(key => {
-                            return item === key ? !ischecked[key] : key
-                          })
-                          return obj
-                        })
-                      }}
-                      checked={ischecked[item]}
-                      data-label={item.title}
+                      onChange={onChange}
+                      name={title}
+                      data-label={title}
+                      value={value}
                     />
                     <div className="sep-item sep-item--checked">
                       <div className="sep-item-icon--checked">
                         <FontAwesomeIcon
-                          className="price-icon"
-                          icon={item.checked ? faCheckCircle : faCircle}
+                          className={
+                            ischecked[title]
+                              ? 'price-icon'
+                              : 'price-icon-unchecked'
+                          }
+                          icon={ischecked[title] ? faCheckCircle : faCircle}
                         />
                       </div>
-                      <div>{item.title}</div>
-                      <span>{item.price}</span>
+                      <div>{title}</div>
+                      <span>{price}</span>
                     </div>
                   </label>
                 )
@@ -129,20 +83,27 @@ export const CalcPrice = () => {
 
         <div className="row">
           <div className="sum">
-            Итоговая стоимость: <span id="sum"> Выберете услуги </span>
+            Итоговая стоимость:
+            <span id="sum">
+              {sum === Number(0) ? 'Выберете услуги' : `${sum} ₽`}
+            </span>
           </div>
         </div>
         <div className="row">
           <button
             type="button"
             className="btn btn-outline my-2 my-sm-0 send-form-outline"
-            data-toggle="modal"
-            data-target="#exampleModal"
+            onClick={clickOrder}
           >
             Заказать
           </button>
         </div>
       </div>
+      <ModalMessage
+        show={showModal}
+        toggle={() => setShowModal(!showModal)}
+        message={'Вы не выбрали ни одной услуги'}
+      />
     </section>
   )
 }

@@ -27,13 +27,10 @@ export const ModalSend = props => {
         checkedItems: checkedItems,
       })
       .then(function(response) {
-        // console.log(response)
         props.handleClose()
         resetForm()
       })
-      .catch(function(error) {
-        // console.log(error)
-      })
+      .catch(function(error) {})
   }
 
   return (
