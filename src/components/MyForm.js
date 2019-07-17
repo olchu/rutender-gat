@@ -1,17 +1,29 @@
 import React from 'react'
 
 export const MyForm = props => {
-  const [dataForm, setDataForm] = React.useState({
+  const formFilds = {
     name: '',
     phone: '',
     email: '',
-  })
+  }
+  const [dataForm, setDataForm] = React.useState(formFilds)
+  const [prevIsSubmitted, setPrevIsSubmitted] = React.useState(
+    props.isSubmitted
+  )
+  if (prevIsSubmitted !== props.isSubmitted) {
+    if (props.isSubmitted) {
+      setDataForm(formFilds)
+    }
+    setPrevIsSubmitted(props.isSubmitted)
+  }
+
   const updateState = e => {
     setDataForm({
       ...dataForm,
       [e.target.name]: e.target.value,
     })
   }
+
   React.useEffect(() => {
     props.getDataForm(dataForm)
   }, [dataForm])
@@ -21,6 +33,7 @@ export const MyForm = props => {
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">Имя:</label>
         <input
+          value={dataForm['name']}
           type="text"
           className="form-control"
           name="name"
@@ -32,6 +45,7 @@ export const MyForm = props => {
         <label htmlFor="exampleInputEmail1">Телефон:</label>
         <input
           type="tel"
+          value={dataForm['phone']}
           className="form-control"
           placeholder="Введите телефон"
           name="phone"
@@ -42,6 +56,7 @@ export const MyForm = props => {
         <label htmlFor="exampleInputEmail1">Email:</label>
         <input
           type="email"
+          value={dataForm['email']}
           className="form-control"
           placeholder="Введите email"
           name="email"

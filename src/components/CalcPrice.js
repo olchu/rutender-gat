@@ -8,7 +8,7 @@ import '../style/calc.scss'
 
 import order from '../data/order.json'
 
-const sendMail = (dataForm, checkedItems) => {
+const sendMail = (dataForm, checkedItems, responseFunc) => {
   axios
     .post('../action_ajax_form.php', {
       name: dataForm.name,
@@ -16,7 +16,9 @@ const sendMail = (dataForm, checkedItems) => {
       email: dataForm.email,
       checkedItems: checkedItems,
     })
-    .then(function(response) {})
+    .then(function(response) {
+      responseFunc()
+    })
     .catch(function(error) {})
 }
 
@@ -28,8 +30,9 @@ export const CalcPrice = () => {
       return obj
     }, {})
   )
-  const [sum, setSum] = React.useState(Number(0))
+  const [sum, setSum] = React.useState(0)
   const [dataForm, setDataForm] = React.useState({})
+  const [isResetDataForm, resetDataForm] = React.useState(false)
 
   const onInputChange = e => {
     setChecked({
@@ -37,10 +40,21 @@ export const CalcPrice = () => {
       [e.target.name]: e.target.checked,
     })
     if (e.target.checked) {
-      setSum(Number(sum) + Number(e.target.value))
+      setSum(sum + Number(e.target.value))
     } else {
-      setSum(Number(sum) - Number(e.target.value))
+      setSum(sum - Number(e.target.value))
     }
+  }
+
+  const responseFunc = () => {
+    resetDataForm(true)
+    setChecked(
+      order.reduce((obj, next) => {
+        obj[next.title] = false
+        return obj
+      }, {})
+    )
+    setSum(0)
   }
 
   const clickOrder = () => {
@@ -54,7 +68,8 @@ export const CalcPrice = () => {
       }
       return obj
     }, [])
-    sendMail(dataForm, checkedItems)
+    sendMail(dataForm, checkedItems, responseFunc)
+    resetDataForm(false)
   }
 
   return (
@@ -66,7 +81,10 @@ export const CalcPrice = () => {
           </div>
           <div className="row">
             <div className="col-md-6 send-col-form">
-              <MyForm getDataForm={dataForm => setDataForm(dataForm)} />
+              <MyForm
+                getDataForm={dataForm => setDataForm(dataForm)}
+                isSubmitted={isResetDataForm}
+              />
             </div>
             <div className="col-md-6">
               {order.map(({ title, price, value }, key) => {
@@ -78,6 +96,7 @@ export const CalcPrice = () => {
                       name={title}
                       data-label={title}
                       value={value}
+                      checked={ischecked[title]}
                     />
                     <div className="sep-item sep-item--checked">
                       <div className="sep-item-icon--checked">
@@ -103,9 +122,7 @@ export const CalcPrice = () => {
         <div className="row">
           <div className="sum">
             Итоговая стоимость:
-            <span id="sum">
-              {sum === Number(0) ? 'Выберете услуги' : `${sum} ₽`}
-            </span>
+            <span id="sum">{sum === 0 ? 'Выберете услуги' : `${sum} ₽`}</span>
           </div>
         </div>
         <div className="row">
