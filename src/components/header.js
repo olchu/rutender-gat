@@ -9,6 +9,7 @@ import logo from '../images/logo.png'
 import 'animate.css/animate.min.css'
 
 const Header = ({ siteTitle, setShowModal, path }) => {
+  const [openMenu, setOpenMenu] = React.useState(false)
   return (
     <header>
       <Navbar variant="default" fixed="top" expand="md" className="my-nav">
@@ -19,13 +20,24 @@ const Header = ({ siteTitle, setShowModal, path }) => {
               Тендерное сопровождение
             </span>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="my-togle"
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            <div class={openMenu ? 'animated-icon2 open' : 'animated-icon2'}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </Navbar.Toggle>
 
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="mobileMenu">
             <Nav className="mr-auto">
               <Nav.Link href="/">Цены</Nav.Link>
               <Nav.Link href="/">Форма 2</Nav.Link>
-              <Nav.Link active={path === '/calc'} href="/calc">
+              <Nav.Link active={path === '/calc/'} href="/calc">
                 Калькулятор услуг
               </Nav.Link>
             </Nav>

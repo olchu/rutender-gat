@@ -37,6 +37,12 @@ section#why,
 section#service,
 section#price,
 section#calc {
+  @media (max-width: 575.98px) {
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
   padding: 40px 0;
   h2 {
     font-weight: normal;
@@ -145,12 +151,29 @@ section#why {
 .my-nav {
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: 80px;
   .nav-link {
     color: $main-color;
+    border-bottom: 2px solid #fff;
+    &:hover,
+    &.active {
+      //color: black;
+      border-bottom: 2px solid $main-color;
+      opacity: 0.7;
+    }
   }
-  .nav-link.active {
-    color: black;
+  .navbar-toggler {
+    &-icon {
+      color: $main-color;
+    }
+  }
+  .my-togle {
+    color: $main-color;
+  }
+  .mobileMenu {
+    background: white;
+    .send-form-outline {
+      margin-top: 20px !important;
+    }
   }
 }
 .carousel-inner {
